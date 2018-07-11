@@ -1,23 +1,23 @@
 
--  [Introduction](Introduction)
- - [Setup](Setup)
-     - [Pre-Requisites ](pre-reqs)
-     - [Optipush Configuration](configuration)
-     - [Deep Linking](deep%20linking)
-     - [Enabling Test Mode](test%20mode) 
- - [Post-Setup](Post%20setup)
-     - [Create & test notification templates](notification%20template) 
-     - [Set up an Optipush campaign](Optipush%20campaign) 
+ - [Introduction](#Introduction)
+ - [Setup](#Setup)
+     - [Pre-Requisites ](#pre-reqs)
+     - [Optipush Configuration](#configuration)
+     - [Deep Linking](#deep%20linking)
+     - [Enabling Test Mode](#test%20mode) 
+ - [Post-Setup](#Post%20setup)
+     - [Create & test notification templates](#notification%20template) 
+     - [Set up an Optipush campaign](#Optipush%20campaign) 
      
 # <a id="Introduction"></a>Introduction
-**Optipush** is Optimove’s mobile push notification delivery add-in module, powering all aspects of preparing, delivering and tracking mobile push notification communications to customers, seamlessly from within Optimove.</br>
+**Optipush** is Optimove’s mobile push notification delivery add-in module, powering all aspects of preparing, delivering and tracking mobile push notification communications to customers, seamlessly from within Optimove.<br>
  **Optimove SDK** for iOS includes built-in functionality for receiving push messages, presenting notifications in the app UI and tracking user responses.
  
 # <a id="Setup"></a>Setup
 
 ## <a id="pre-reqs"></a>Pre-Requisites 
 
- 1. [Optimove Mobile SDK for iOS](https://github.com/optimove-tech/A) implemented 
+ 1. [Optimove Mobile SDK for iOS](https://github.com/optimove-tech/iOS-SDK-Integration-Guide) implemented 
  
 ## <a id="configuration"></a>Optipush Configuration
 
@@ -122,7 +122,7 @@ override func didReceive(_ request: UNNotificationRequest, withContentHandler co
     
 override func serviceExtensionTimeWillExpire() 
 {
-    // Pass the callback to Optimove only if the notifcation was processed by Optimove 
+    // Forward the callback to Optimove only if the notification was initially processed by Optimove in the didReceive callback 
     if optimoveExtensionService.isHandledByOptimove {
         self.optimoveExtensionService.serviceExtensionTimeWillExpire()
     } else {
@@ -239,14 +239,20 @@ class ViewController: UIViewController
     }
 }
 ````
+
 >**Notes:**
 >- It is recommended to maintain 2 apps - one with test mode enabled (for internal purposes ONLY) and one without test mode enabled (for the general public).
 >- The app that is published to the App Store must NOT have the test mode enabled.
+
 <br>
+
 # <a id="Post setup"></a>Post-Setup
+
 ## <a id="notification template"></a>Create & Test notification templates
+
 Once Optimove has enabled Optipush as an execution channel for your Optimove instance, you can begin creating and testing your first Optipush template.
 >Note: In order to be able to test your templates, the test mode must be [enabled](https://github.com/optimove-tech/A/tree/master/O/O%20for%20A#enabling-test-mode) within your mobile app.<br>
+
 ### Create  an Optipush Template
  1. Go to the Manage Templates page and choose 'Optipush' from the Channel drop-down menu. <br>
  2. Enter values for the following fields:
@@ -258,7 +264,8 @@ Once Optimove has enabled Optipush as an execution channel for your Optimove ins
  3. Personalization - you can personalize the notification by adding dynamic tags and emojis to the notification. <br>
  4. Preview - you can preview the push template notification before sending it out. <br>
  5. **Deep links** (Optional) - choose the app (iOS) and select the target screen in your app that you want your customers to be directed to when opening the message. <br>
- >Notes: <br>
+ 
+ >Notes:
  >- In order to add Deep Links to the drop-down menu, please send the list of screen names to your CSM that you have configured in your app as described [here](https://github.com/optimove-tech/A/tree/master/O/O%20for%20iOS#deep-linking).
  >- *If a Deep Link is not chosen, the customer will be directed to the main screen when opening the message.* 
  >- When creating templates for Optipush, if the template is targeted for a specific device (iOS/Android), it is recommended to add the device name to the template naming convention. This way it will be identifiable when choosing a template for a campaign targeting a specific device.<br>
@@ -266,14 +273,19 @@ Once Optimove has enabled Optipush as an execution channel for your Optimove ins
 ### Test an Optipush Template
 1. **Validate** - validates the push notification template to make sure all mandatory fields are completed and contain no errors. <br>
 2. **Send Test**  - clicking this link will send the push notification template to all devices that have the app installed with the test mode enabled.<br>
+
+
 ## <a id="Optipush campaign"></a>Set up an Optipush campaign
+
 ### Run Campaign
+
 Please follow these steps in order to run a pre-scheduled campaign via execution channel **Optipush**.<br>
 1. From the main menu go on *One-to-One Campaigns* --> click on *More* from the drop-down menu --> click on ***Run Campaign***.  <br>
 2. Go through Steps 1 & 2 of the Run Campaign wizard as you would for any campaign. <br>
 3. In Step 3 (Execution Details) choose from the *Channel* drop-down menu *Optipush*. This action will open the **Optipush Options** window.<br>
+
 ![](https://raw.githubusercontent.com/optimove-tech/A/master/O/O%20for%20iOS/images/2_a.png)
 <br>
-4. Choose from the *App* drop-down menu if you would like to run the campaign for your iOS app, Android app, or both by selecting the relevant box(es).<br>
-5. Choose the relevant template for the *Template* drop down menu that you would like the targeted audience to receive.<br>
-6. Continue through the remaining steps of the Run Campaign wizard to schedule the campaign for your preferred dates and times.
+5. Choose from the *App* drop-down menu if you would like to run the campaign for your iOS app, Android app, or both by selecting the relevant box(es).<br>
+6. Choose the relevant template for the *Template* drop down menu that you would like the targeted audience to receive.<br>
+7. Continue through the remaining steps of the Run Campaign wizard to schedule the campaign for your preferred dates and times.
