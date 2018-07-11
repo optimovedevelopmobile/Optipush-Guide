@@ -1,5 +1,4 @@
-
--  [Introduction](#Introduction)
+ - [Introduction](#Introduction)
  - [Setup](#Setup)
      - [Pre-Requisites ](#pre-reqs)
      - [Optipush Configuration](#configuration)
