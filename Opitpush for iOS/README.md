@@ -54,7 +54,7 @@ end
 8. In order to enable communication between the extension and the application, add an `App group` capability in both the app and the extension targets.
 The group name convention should be: `group.<the application bundle id>.optimove`<br>
 
-![\[Screenshot\]](https://raw.githubusercontent.com/optimove-tech/A/master/O/O%20for%20iOS/images/Screen%20Shot%202018-07-02%20at%2018.06.21.png)
+![\[Screenshot\]](https://raw.githubusercontent.com/optimove-tech/Optipush-Guide/master/Opitpush%20for%20iOS/Screen%20Shot%202018-07-02%20at%2018.06.21.png)
 
 To implement the service's logic open the `NotificationService.swift` file.
 Inside, you'll find 2 callbacks that are defined by iOS:
