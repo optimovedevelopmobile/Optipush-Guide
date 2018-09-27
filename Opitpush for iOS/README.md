@@ -258,7 +258,7 @@ Once Optimove has enabled Optipush as an execution channel for your Optimove ins
     - Template Name- Name te template 
      - Template Title - Title of push template
      - Message - Message of the template <br>
-![](https://raw.githubusercontent.com/optimove-tech/A/master/O/O%20for%20iOS/images/3.png)
+![](https://raw.githubusercontent.com/optimove-tech/Optipush-Guide/master/Opitpush%20for%20iOS/1.png)
 <br>
  3. Personalization - you can personalize the notification by adding dynamic tags and emojis to the notification. <br>
  4. Preview - you can preview the push template notification before sending it out. <br>
@@ -283,7 +283,7 @@ Please follow these steps in order to run a pre-scheduled campaign via execution
 2. Go through Steps 1 & 2 of the Run Campaign wizard as you would for any campaign. <br>
 3. In Step 3 (Execution Details) choose from the *Channel* drop-down menu *Optipush*. This action will open the **Optipush Options** window.<br>
 
-![](https://raw.githubusercontent.com/optimove-tech/A/master/O/O%20for%20iOS/images/2_a.png)
+![](https://raw.githubusercontent.com/optimove-tech/Optipush-Guide/master/Opitpush%20for%20iOS/2_a.png)
 <br>
 5. Choose from the *App* drop-down menu if you would like to run the campaign for your iOS app, Android app, or both by selecting the relevant box(es).<br>
 6. Choose the relevant template for the *Template* drop down menu that you would like the targeted audience to receive.<br>
