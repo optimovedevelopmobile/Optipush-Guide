@@ -10,3 +10,5 @@ For more information on how to add Optipush to your account, please contact your
 
  - Implement [Optipush for your iOS native app](https://github.com/optimove-tech/Optipush-Guide/blob/master/Opitpush%20for%20iOS/README.md)
  - Implement [Optipush for your Android native app](https://github.com/optimove-tech/Optipush-Guide/tree/master/Optipush%20for%20Android)
+ - Implement [Optipush for your Unity app](https://github.com/optimove-tech/Optipush-Guide/tree/master/Optipush%20for%20Unity)
+
