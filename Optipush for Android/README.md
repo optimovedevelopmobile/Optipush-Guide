@@ -74,6 +74,35 @@ If the **_Main Activity_** (i.e. has `<intent-filter>` with `<action android:nam
 </activity>
 ```
 
+Then, to find out which screen was targeted within your `Activity` (for example `Fragment` routing) use the `LinkDataExtractedListener` to receive the `screenName` that was sent through the deep link. You pass the `LinkDataExtractedListener` to an object called `DeepLinkHandler` that, for performance reasons, is completely independent from the _Optimove SDK lifecycle_ and can respond to you with the deep link very quickly. the `DeepLinkHandler` takes the `LinkDataExtractedListener` and the `Intent` that started the `Activity` to extract the deep link and propagate the correct data to the app.
+
+> The `DeepLinkHandler` object doesn't hold a strong reference to the Listener and would release the reference in a safe manner
+
+```java
+public class PromoActivity extends AppCompatActivity implements LinkDataExtractedListener {
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_promo);
+    // Create the DeepLinkHandler and pass it the Intent that started this Activity and the LinkDataExtractedListener instance
+    // Note: No need to worry about reference releasing
+    new DeepLinkHandler(getIntent()).extractLinkData(this);
+  }
+
+  @Override
+  public void onDataExtracted(String screenName, Map<String, String> parameters) {
+    // Navigate according to the screenName parameter
+  }
+
+  @Override
+  public void onErrorOccurred(LinkDataError error) {
+    // The only errors at the moment are "no link found" so you can safely ignore this callback for now
+    Logger.w("LinkDataExtractedListener", error);
+  }
+}
+```
+
 <br>
 
 ## <a id="test mode"></a>Enabling Test Mode
@@ -100,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements OptimoveSuccessSt
 
   @Override
   protected void onStop() {
-
     super.onStop();
     
     Optimove.getInstance().stopTestMode(success -> {
